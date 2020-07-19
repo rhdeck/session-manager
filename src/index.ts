@@ -1,7 +1,11 @@
 import { parse } from "uri-js";
+import { reverse } from "dns";
+import { isRegExp } from "util";
 interface Schemable {
   scheme: string;
   getFromUri(uri: string): Promise<Sessionable>;
+  idToUri?: (uri: string) => string;
+  get(id: string): Promise<Sessionable>;
 }
 interface Sessionable {
   getUri(): string;
@@ -16,10 +20,29 @@ const addClass = (newClass: Schemable) => {
   schemeRegistry[newClass.scheme] = newClass;
 };
 /**
+ * Retrieve from the registry, async to permit a load. Uses the class/scheme to limit the lookup
+ * @param schemeOrClass Scheme (e.g. "myClass") or classname ("MyClass") to look up
+ * @param id id global within the class domain
+ */
+const getFromId = async <T>(
+  schemeOrClass: string | Schemable,
+  id: string
+): Promise<T> => {
+  let thisClass;
+  if (typeof schemeOrClass === "string") {
+    thisClass = schemeRegistry[schemeOrClass];
+  }
+  if (!thisClass) throw new Error("Scheme not registered");
+  if (typeof thisClass.idToUri === "function") {
+    return getFromUri(thisClass.idToUri(id));
+  }
+  return <T>(<unknown>thisClass.get(id));
+};
+/**
  * Retrieve from the registry, async to permit a load if it was not previously saved
  * @param uri URI of object to retrieve
  */
-const get = async <T>(uri: string): Promise<T> => {
+const getFromUri = async <T>(uri: string): Promise<T> => {
   if (registry[uri]) return <T>(<unknown>registry[uri]);
   //I need to get this. check the scheme
   const { scheme } = parse(uri);
@@ -90,4 +113,4 @@ const set = (o: Sessionable) => {
 const remove = (uri: string) => {
   delete registry[uri];
 };
-export { withSession, withBatch, set, remove, get, addClass };
+export { withSession, withBatch, set, remove, getFromUri, getFromId, addClass };
