@@ -1,6 +1,4 @@
 import { parse } from "uri-js";
-import { reverse } from "dns";
-import { isRegExp } from "util";
 interface Schemable {
   scheme: string;
   getFromUri(uri: string): Promise<Sessionable>;
@@ -113,4 +111,14 @@ const set = (o: Sessionable) => {
 const remove = (uri: string) => {
   delete registry[uri];
 };
-export { withSession, withBatch, set, remove, getFromUri, getFromId, addClass };
+export {
+  Sessionable,
+  Schemable,
+  withSession,
+  withBatch,
+  set,
+  remove,
+  getFromUri,
+  getFromId,
+  addClass,
+};
