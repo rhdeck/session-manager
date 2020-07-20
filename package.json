@@ -1,6 +1,6 @@
 {
   "name": "@raydeck/session-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Session manager to manage caching class data in serverless contexts",
   "main": "lib/index.js",
   "types": "lib/types",
