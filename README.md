@@ -23,14 +23,14 @@
 
 ### Functions
 
-* [addClass](#const-addclass)
-* [flushSession](#const-flushsession)
-* [getFromId](#const-getfromid)
-* [getFromItem](#const-getfromitem)
-* [getFromUri](#const-getfromuri)
-* [remove](#const-remove)
-* [set](#const-set)
-* [withBatch](#const-withbatch)
+* [addClass](#addclass)
+* [flushSession](#flushsession)
+* [getFromId](#getfromid)
+* [getFromItem](#getfromitem)
+* [getFromUri](#getfromuri)
+* [remove](#remove)
+* [set](#set)
+* [withBatch](#withbatch)
 * [withSession](#const-withsession)
 
 ## Type aliases
@@ -39,7 +39,7 @@
 
 Ƭ **LambdaFunctionType**: *function*
 
-*Defined in [index.ts:87](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L87)*
+*Defined in [index.ts:87](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L87)*
 
 #### Type declaration:
 
@@ -59,7 +59,7 @@ Name | Type |
 
 • **registry**: *object*
 
-*Defined in [index.ts:19](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L19)*
+*Defined in [index.ts:19](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L19)*
 
 #### Type declaration:
 
@@ -71,7 +71,7 @@ ___
 
 • **schemeRegistry**: *object*
 
-*Defined in [index.ts:18](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L18)*
+*Defined in [index.ts:18](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L18)*
 
 #### Type declaration:
 
@@ -79,11 +79,11 @@ ___
 
 ## Functions
 
-### `Const` addClass
+###  addClass
 
-▸ **addClass**(`newClass`: [Schemable](#interfacesschemablemd)): *void*
+▸ **addClass**(`newClass`: [Schemable](#interfacesschemablemd)): *Promise‹void›*
 
-*Defined in [index.ts:46](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L46)*
+*Defined in [index.ts:46](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L46)*
 
 Add a scheme-able class to the session registry
 
@@ -93,15 +93,15 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `newClass` | [Schemable](#interfacesschemablemd) | Class -implementing static scheme property and getFromUri method - to add to the registry for lookups  |
 
-**Returns:** *void*
+**Returns:** *Promise‹void›*
 
 ___
 
-### `Const` flushSession
+###  flushSession
 
 ▸ **flushSession**(): *void*
 
-*Defined in [index.ts:84](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L84)*
+*Defined in [index.ts:84](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L84)*
 
 Flush the session of cached files
 
@@ -109,11 +109,11 @@ Flush the session of cached files
 
 ___
 
-### `Const` getFromId
+###  getFromId
 
 ▸ **getFromId**‹**T**›(`schemeOrClass`: string | [Schemable](#interfacesschemablemd), `id`: string): *Promise‹T›*
 
-*Defined in [index.ts:54](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L54)*
+*Defined in [index.ts:54](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L54)*
 
 Retrieve from the registry, async to permit a load. Uses the class/scheme to limit the lookup
 
@@ -132,13 +132,17 @@ Name | Type | Description |
 
 ___
 
-### `Const` getFromItem
+###  getFromItem
 
-▸ **getFromItem**(`schemeOrClass`: string | [Schemable](#interfacesschemablemd), `item`: object): *Promise‹[Sessionable](#interfacessessionablemd)›*
+▸ **getFromItem**‹**T**›(`schemeOrClass`: string | [Schemable](#interfacesschemablemd), `item`: object): *Promise‹T›*
 
-*Defined in [index.ts:25](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L25)*
+*Defined in [index.ts:25](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L25)*
 
 Load an item based on map of data (usually from database)
+
+**Type parameters:**
+
+▪ **T**
 
 **Parameters:**
 
@@ -147,15 +151,15 @@ Name | Type | Description |
 `schemeOrClass` | string &#124; [Schemable](#interfacesschemablemd) | Scheme (e.g. "myClass") or classname ("MyClass") to look up |
 `item` | object | Map of attributes to load from  |
 
-**Returns:** *Promise‹[Sessionable](#interfacessessionablemd)›*
+**Returns:** *Promise‹T›*
 
 ___
 
-### `Const` getFromUri
+###  getFromUri
 
 ▸ **getFromUri**‹**T**›(`uri`: string): *Promise‹T›*
 
-*Defined in [index.ts:72](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L72)*
+*Defined in [index.ts:72](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L72)*
 
 Retrieve from the registry, async to permit a load if it was not previously saved
 
@@ -173,11 +177,11 @@ Name | Type | Description |
 
 ___
 
-### `Const` remove
+###  remove
 
 ▸ **remove**(`uri`: string): *void*
 
-*Defined in [index.ts:144](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L144)*
+*Defined in [index.ts:142](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L142)*
 
 Removes an instance from the reistry by the uri
 
@@ -191,11 +195,11 @@ Name | Type | Description |
 
 ___
 
-### `Const` set
+###  set
 
 ▸ **set**(`o`: [Sessionable](#interfacessessionablemd)): *void*
 
-*Defined in [index.ts:136](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L136)*
+*Defined in [index.ts:134](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L134)*
 
 Save an object instance to the session registry
 
@@ -209,11 +213,11 @@ Name | Type | Description |
 
 ___
 
-### `Const` withBatch
+###  withBatch
 
 ▸ **withBatch**(`f`: [LambdaFunctionType](#lambdafunctiontype)): *(Anonymous function)*
 
-*Defined in [index.ts:104](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L104)*
+*Defined in [index.ts:104](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L104)*
 
 Wraps a function to be used in a AWS Appsync Batch invocation
 
@@ -231,7 +235,7 @@ ___
 
 ▸ **withSession**(`f`: [LambdaFunctionType](#lambdafunctiontype)): *(Anonymous function)*
 
-*Defined in [index.ts:92](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L92)*
+*Defined in [index.ts:92](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L92)*
 
 Wraps a function to guarantee a new session before it runs
 
@@ -275,7 +279,7 @@ Interface for *static* elements on a class
 
 • **getFromItem**? : *undefined | function*
 
-*Defined in [index.ts:10](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L10)*
+*Defined in [index.ts:10](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L10)*
 
 ___
 
@@ -283,7 +287,7 @@ ___
 
 • **idToUri**? : *undefined | function*
 
-*Defined in [index.ts:8](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L8)*
+*Defined in [index.ts:8](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L8)*
 
 ___
 
@@ -291,7 +295,7 @@ ___
 
 • **scheme**: *string*
 
-*Defined in [index.ts:6](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L6)*
+*Defined in [index.ts:6](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L6)*
 
 ## Methods
 
@@ -299,7 +303,7 @@ ___
 
 ▸ **get**(`id`: string): *Promise‹[Sessionable](#interfacessessionablemd)›*
 
-*Defined in [index.ts:9](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L9)*
+*Defined in [index.ts:9](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L9)*
 
 **Parameters:**
 
@@ -315,7 +319,7 @@ ___
 
 ▸ **getFromUri**(`uri`: string): *Promise‹[Sessionable](#interfacessessionablemd)›*
 
-*Defined in [index.ts:7](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L7)*
+*Defined in [index.ts:7](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L7)*
 
 **Parameters:**
 
@@ -350,6 +354,6 @@ Interface for *instance* elements on a class. (Much simpler requirement)
 
 ▸ **getUri**(): *string*
 
-*Defined in [index.ts:16](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L16)*
+*Defined in [index.ts:16](https://github.com/rhdeck/session-manager/blob/c4be340/src/index.ts#L16)*
 
 **Returns:** *string*

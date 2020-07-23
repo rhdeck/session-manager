@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "docs": "rm README.md && typedoc --theme markdown --readme none --mode file --excludeNotExported --includeVersion --out docstemp && concat-md docstemp > README.md && rm -rf docstemp",
+    "docs": " typedoc --theme markdown --readme none --mode file --excludeNotExported --includeVersion --out docstemp && rm README.md && concat-md docstemp > README.md && rm -rf docstemp",
     "prepublishOnly": "yarn build && yarn docs && git commit README.md -m \"docs: updating docs\" && git push"
   },
   "repository": {
