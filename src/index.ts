@@ -142,3 +142,10 @@ export function set(o: Sessionable) {
 export function remove(uri: string) {
   delete registry[uri];
 }
+/**
+ * Determine if an object with this uri is already cached
+ * @param uri
+ */
+export function isCached(uri: string): boolean {
+  return !!registry[uri];
+}
