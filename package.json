@@ -6,8 +6,9 @@
   "types": "lib/types",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && typedoc",
-    "prepublishOnly": "yarn build"
+    "build": "tsc",
+    "docs": "rm README.md && typedoc --theme markdown --readme none --mode file --excludeNotExported --includeVersion --out docstemp && concat-md docstemp > README.md && rm -rf docstemp",
+    "prepublishOnly": "yarn build && yarn docs && git commit README.md -m \"docs: updating docs\" && git push"
   },
   "repository": {
     "type": "git",
@@ -20,12 +21,14 @@
   },
   "homepage": "https://github.com/rhdeck/session-manager#readme",
   "devDependencies": {
-    "@types/node": "^14.0.23",
-    "typedoc": "^0.17.8",
-    "typescript": "^3.9.7",
     "@raydeck/livelink": "^1.5.2",
     "@types/aws-lambda": "^8.10.59",
-    "@types/uuid": "^8.0.0"
+    "@types/node": "^14.0.23",
+    "@types/uuid": "^8.0.0",
+    "concat-md": "^0.3.5",
+    "typedoc": "^0.17.8",
+    "typedoc-plugin-markdown": "^2.3.1",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "uri-js": "^4.2.2",
