@@ -1,9 +1,9 @@
 
 <a name="readmemd"></a>
 
-[@raydeck/session-manager - v1.0.3](#readmemd)
+[@raydeck/session-manager - v1.1.0](#readmemd)
 
-# @raydeck/session-manager - v1.0.3
+# @raydeck/session-manager - v1.1.0
 
 ## Index
 
@@ -39,7 +39,7 @@
 
 Ƭ **LambdaFunctionType**: *function*
 
-*Defined in [index.ts:87](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L87)*
+*Defined in [index.ts:87](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L87)*
 
 #### Type declaration:
 
@@ -59,7 +59,7 @@ Name | Type |
 
 • **registry**: *object*
 
-*Defined in [index.ts:19](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L19)*
+*Defined in [index.ts:19](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L19)*
 
 #### Type declaration:
 
@@ -71,7 +71,7 @@ ___
 
 • **schemeRegistry**: *object*
 
-*Defined in [index.ts:18](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L18)*
+*Defined in [index.ts:18](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L18)*
 
 #### Type declaration:
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **addClass**(`newClass`: [Schemable](#interfacesschemablemd)): *void*
 
-*Defined in [index.ts:46](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L46)*
+*Defined in [index.ts:46](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L46)*
 
 Add a scheme-able class to the session registry
 
@@ -101,7 +101,7 @@ ___
 
 ▸ **flushSession**(): *void*
 
-*Defined in [index.ts:84](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L84)*
+*Defined in [index.ts:84](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L84)*
 
 Flush the session of cached files
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **getFromId**‹**T**›(`schemeOrClass`: string | [Schemable](#interfacesschemablemd), `id`: string): *Promise‹T›*
 
-*Defined in [index.ts:54](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L54)*
+*Defined in [index.ts:54](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L54)*
 
 Retrieve from the registry, async to permit a load. Uses the class/scheme to limit the lookup
 
@@ -136,7 +136,7 @@ ___
 
 ▸ **getFromItem**(`schemeOrClass`: string | [Schemable](#interfacesschemablemd), `item`: object): *Promise‹[Sessionable](#interfacessessionablemd)›*
 
-*Defined in [index.ts:25](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L25)*
+*Defined in [index.ts:25](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L25)*
 
 Load an item based on map of data (usually from database)
 
@@ -155,7 +155,7 @@ ___
 
 ▸ **getFromUri**‹**T**›(`uri`: string): *Promise‹T›*
 
-*Defined in [index.ts:72](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L72)*
+*Defined in [index.ts:72](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L72)*
 
 Retrieve from the registry, async to permit a load if it was not previously saved
 
@@ -177,7 +177,7 @@ ___
 
 ▸ **remove**(`uri`: string): *void*
 
-*Defined in [index.ts:144](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L144)*
+*Defined in [index.ts:144](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L144)*
 
 Removes an instance from the reistry by the uri
 
@@ -195,7 +195,7 @@ ___
 
 ▸ **set**(`o`: [Sessionable](#interfacessessionablemd)): *void*
 
-*Defined in [index.ts:136](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L136)*
+*Defined in [index.ts:136](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L136)*
 
 Save an object instance to the session registry
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **withBatch**(`f`: [LambdaFunctionType](#lambdafunctiontype)): *(Anonymous function)*
 
-*Defined in [index.ts:104](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L104)*
+*Defined in [index.ts:104](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L104)*
 
 Wraps a function to be used in a AWS Appsync Batch invocation
 
@@ -231,7 +231,7 @@ ___
 
 ▸ **withSession**(`f`: [LambdaFunctionType](#lambdafunctiontype)): *(Anonymous function)*
 
-*Defined in [index.ts:92](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L92)*
+*Defined in [index.ts:92](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L92)*
 
 Wraps a function to guarantee a new session before it runs
 
@@ -246,7 +246,7 @@ Name | Type | Description |
 
 <a name="interfacesschemablemd"></a>
 
-[@raydeck/session-manager - v1.0.3](#readmemd) › [Schemable](#interfacesschemablemd)
+[@raydeck/session-manager - v1.1.0](#readmemd) › [Schemable](#interfacesschemablemd)
 
 # Interface: Schemable
 
@@ -275,7 +275,7 @@ Interface for *static* elements on a class
 
 • **getFromItem**? : *undefined | function*
 
-*Defined in [index.ts:10](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L10)*
+*Defined in [index.ts:10](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L10)*
 
 ___
 
@@ -283,7 +283,7 @@ ___
 
 • **idToUri**? : *undefined | function*
 
-*Defined in [index.ts:8](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L8)*
+*Defined in [index.ts:8](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L8)*
 
 ___
 
@@ -291,7 +291,7 @@ ___
 
 • **scheme**: *string*
 
-*Defined in [index.ts:6](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L6)*
+*Defined in [index.ts:6](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L6)*
 
 ## Methods
 
@@ -299,7 +299,7 @@ ___
 
 ▸ **get**(`id`: string): *Promise‹[Sessionable](#interfacessessionablemd)›*
 
-*Defined in [index.ts:9](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L9)*
+*Defined in [index.ts:9](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L9)*
 
 **Parameters:**
 
@@ -315,7 +315,7 @@ ___
 
 ▸ **getFromUri**(`uri`: string): *Promise‹[Sessionable](#interfacessessionablemd)›*
 
-*Defined in [index.ts:7](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L7)*
+*Defined in [index.ts:7](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L7)*
 
 **Parameters:**
 
@@ -328,7 +328,7 @@ Name | Type |
 
 <a name="interfacessessionablemd"></a>
 
-[@raydeck/session-manager - v1.0.3](#readmemd) › [Sessionable](#interfacessessionablemd)
+[@raydeck/session-manager - v1.1.0](#readmemd) › [Sessionable](#interfacessessionablemd)
 
 # Interface: Sessionable
 
@@ -350,6 +350,6 @@ Interface for *instance* elements on a class. (Much simpler requirement)
 
 ▸ **getUri**(): *string*
 
-*Defined in [index.ts:16](https://github.com/rhdeck/session-manager/blob/c4393c4/src/index.ts#L16)*
+*Defined in [index.ts:16](https://github.com/rhdeck/session-manager/blob/21bdecf/src/index.ts#L16)*
 
 **Returns:** *string*
